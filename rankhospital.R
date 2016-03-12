@@ -67,7 +67,6 @@ rankhospital <- function(state, outcome, num = "best"){
       ds[range,]
   }
   
-  
   ## Main
   ## Check that outcome is valid
   if (outcome == "heart attack"){
@@ -78,7 +77,7 @@ rankhospital <- function(state, outcome, num = "best"){
       hospital <- bh[,c("Hospital.Name")]
       rate <- bh[,2]
     } else{
-      print(paste("Error in best(", state, ", ", outcome,") : invalid state", sep=""))
+      hospital <- paste("Error in best(", state, ", ", outcome,") : invalid state", sep="")
     }
   } else if (outcome == "heart failure"){
     ## Check that state is valid
@@ -88,7 +87,7 @@ rankhospital <- function(state, outcome, num = "best"){
       hospital <- bh[,c("Hospital.Name")]
       rate <- bh[,2]
     } else{
-      print(paste("Error in best(", state, ", ", outcome,") : invalid state", sep=""))
+      hospital <- paste("Error in best(", state, ", ", outcome,") : invalid state", sep="")
     }
   } else if (outcome == "pneumonia"){
     ## Check that state is valid
@@ -98,11 +97,10 @@ rankhospital <- function(state, outcome, num = "best"){
       hospital <- bh[,c("Hospital.Name")]
       rate <- bh[,2]
     } else{
-      print(paste("Error in best(", state, ", ", outcome,") : invalid state", sep=""))
+      hospital <- paste("Error in best(", state, ", ", outcome,") : invalid state", sep="")
     }
   } else{
-    print(paste("Error in best(", state, ", ", outcome,") : invalid outcome", sep=""))
+    hospital <- paste("Error in best(", state, ", ", outcome,") : invalid outcome", sep="")
   }
-  
-  print(hospital)
+  hospital
 }
